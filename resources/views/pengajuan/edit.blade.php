@@ -19,7 +19,7 @@
                 @foreach($pengaduan as $value)
                 <div class="tab-content">
                     <div class="tab-pane active" id="data" role="tabpanel" aria-labelledby="data-tab">
-                        <div class="card-body">     
+                        <div class="card-body">
                             <table class="table table-striped">
                                 <tr>
                                     <th>Tanggal dibuat</th>
@@ -41,90 +41,100 @@
                                     <td>:</td>
                                     <td>{{$value->kategori}} </td>
                                 </tr>
-                            </table>                                  
+                                <tr>
+                                    <th>Status</th>
+                                    <td>:</td>
+                                    <td>{{$value->status==0?'belum diproses':$value->status}} </td>
+                                </tr>
+                                <tr>
+                                    <th style="vertical-align: top;">Lokasi</th>
+                                    <td style="vertical-align: top;">:</td>
+                                    <td>
+                                        <div style="height: 400px; width: 100%;" id="mapId"></div>
+                                    </td>
+                                </tr>
+                            </table>
                         </div>
                     </div>
                     <div class="tab-pane" id="pengajuan" role="tabpanel" aria-labelledby="pengajuan-tab">
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-lg-4">
-                                <img src="{{url('/database/foto_pengaduan/'. $value->foto_pengaduan)}}" alt="" width="250">
+                                    <img src="{{url('/database/foto_pengaduan/'. $value->foto_pengaduan)}}" alt="" width="250">
                                 </div>
                                 <div class="col-lg-8">
-                                <p>Laporan: {{$value->isi_laporan}}</p>
-                                <p>Alamat Lokasi Laporan: {{$value->isi_laporan}}</p>
-                                <p>Desa: {{$value->isi_laporan}}</p>
-                                <p>Kecamatan: {{$value->isi_laporan}}</p>
-                            </div>
+                                    <p>Laporan: {{$value->isi_laporan}}</p>
+                                    <p>Alamat Lokasi Laporan: {{$value->isi_laporan}}</p>
+                                    <p>Desa: {{$value->isi_laporan}}</p>
+                                    <p>Kecamatan: {{$value->isi_laporan}}</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="tab-pane" id="tanggapan" role="tabpanel" aria-labelledby="tanggapan-tab">
                         <div class="card-body">
-                        <form action="/pengajuan_update" method="post">
-                                    @csrf
-                            <div class="row">
-                                
-                                    <input type="hidden" value="{{$value->kode_pengaduan}}" name="kode_pengaduan">
-                                    
-                                @if($value->tanggapan == '0')
-                                <div class="col-lg-12">
-                                    <div class="form-group">
-                                        <label for="tanggapan"><b>Tanggapan :</b></label>
-                                        <textarea name="tanggapan" id="tanggapan" class="form-control">
+                            <form action="/pengajuan_update" method="post" enctype="multipart/form-data">
+                                @csrf
+                                <div class="row">
 
-                                        </textarea>
+                                    <input type="hidden" value="{{$value->kode_pengaduan}}" name="kode_pengaduan">
+
+                                    @if($value->tanggapan == '0')
+                                    <div class="col-lg-12">
+                                        <div class="form-group">
+                                            <label for="tanggapan"><b>Tanggapan :</b></label>
+                                            <textarea required name="tanggapan" id="tanggapan" class="form-control"></textarea>
+                                        </div>
+                                    </div>
+                                    @else
+
+                                    <div class="col-lg-12">
+                                        <div class="form-group">
+                                            <label for="tanggapan"><b>Tanggapan :</b></label>
+                                            <textarea required name="tanggapan" id="tanggapan" class="form-control">{{$value->tanggapan}}</textarea>
+                                        </div>
+                                    </div>
+                                    @endif
+
+                                    <div class="col-lg-12">
+                                        <label for="status"><b>Status Pengaduan :</b> </label>
+                                        <select required name="status" id="status" class="form-control">
+                                            <option value="" selected disabled>~ Status Pengaduan ~</option>
+                                            @if($value->status == '0')
+                                            <option value="0" selected>Belum di proses</option>
+                                            @else
+                                            <option value="0">Belum di proses</option>
+                                            @endif
+                                            @if($value->status == 'proses')
+                                            <option value="proses" selected>Sedang di proses</option>
+                                            @else
+                                            <option value="proses">Sedang di proses</option>
+                                            @endif
+                                            @if($value->status == 'diterima')
+                                            <option value="diterima" selected>Diterima</option>
+                                            @else
+                                            <option value="diterima">Diterima</option>
+                                            @endif
+                                            @if($value->status == 'ditolak')
+                                            <option value="ditolak" selected>Ditolak</option>
+                                            @else
+                                            <option value="ditolak">Ditolak</option>
+                                            @endif
+                                            @if($value->status == 'selesai')
+                                            <option value="selesai" selected>Selesai Diperbaiki</option>
+                                            @else
+                                            <option value="selesai">Selesai Diperbaiki</option>
+                                            @endif
+                                        </select>
+                                    </div>
+                                    <br>
+                                    <div class="col-lg-12 mt-3" id="foto_selesai_form">
+                                    </div>
+
+                                    <div class="col-lg-12 mt-4">
+                                        <button class="btn btn-primary btn-block">Update</button>
                                     </div>
                                 </div>
-                                @else
-                                
-                                <div class="col-lg-12">
-                                    <div class="form-group">
-                                        <label for="tanggapan"><b>Tanggapan :</b></label>
-                                        <textarea name="tanggapan" id="tanggapan" class="form-control">
-                                            {{$value->tanggapan}}
-                                        </textarea>
-                                    </div>
-                                </div>
-                                @endif
-                                
-                                <div class="col-lg-12">
-                                    <label for="status"><b>Status Pengaduan :</b> </label>
-                                    <select name="status" id="status" class="form-control">
-                                        <option value="" selected disabled>~ Status Pengaduan ~</option>
-                                        @if($value->status == '0')
-                                        <option value="0" selected>Belum di proses</option>
-                                        @else
-                                        <option value="0">Belum di proses</option>
-                                        @endif
-                                        @if($value->status == 'proses')
-                                        <option value="proses" selected>Sedang di proses</option>
-                                        @else
-                                        <option value="proses">Sedang di proses</option>
-                                        @endif
-                                        @if($value->status == 'diterima')
-                                        <option value="diterima" selected>Diterima</option>
-                                        @else
-                                        <option value="diterima">Diterima</option>
-                                        @endif
-                                        @if($value->status == 'ditolak')
-                                        <option value="ditolak" selected>Ditolak</option>
-                                        @else
-                                        <option value="ditolak">Ditolak</option>
-                                        @endif
-                                        @if($value->status == 'selesai')
-                                        <option value="selesai" selected>Selesai Diperbaiki</option>
-                                        @else
-                                        <option value="selesai">Selesai Diperbaiki</option>
-                                        @endif
-                                    </select>
-                                </div>
-                                <br>
-                                
-                                <div class="col-lg-12 mt-4">
-                                <button class="btn btn-primary btn-block">Update</button>
-                                </div>
-                            </div>
                             </form>
 
                         </div>
@@ -140,8 +150,32 @@
 @push('scripts')
 <script>
     $(document).ready(function() {
-        $('#example').DataTable();
-    } );
+        const html = `<label for="foto_pengaduan"><b> Foto Perbaikan :</b></label> <input type="file" class="form-control" name="foto_selesai" id="foto_selesai" required />`
+
+        $('#example').DataTable()
+
+        $('#status').change(function() {
+            const val = $(this).val()
+            if (val === 'selesai') {
+                $('#foto_selesai_form').html(html)
+            } else {
+                $('#foto_selesai_form').html("<div/>")
+            }
+        })
+
+        const mark = ["{{$pengaduan[0]->latitude}}", "{{$pengaduan[0]->longitude}}"]
+
+        const map = L.map('mapId', {
+            center: mark,
+            zoom: 16
+        })
+
+        marker = L.marker(mark).addTo(map)
+
+        L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map)
+    });
 </script>
 @endpush
 @endsection
