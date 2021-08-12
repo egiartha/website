@@ -59,7 +59,7 @@
                     <a class="nav-item nav-link" href="/data_laporan">Data Laporan</a>
                     <a class="nav-item nav-link" href="/profil">Profil</a>
                     <a class="nav-item nav-link" href="/tentang">Kontak Kami</a>
-                    <a class="nav-item nav-link" href="/lokasi">Masukan Lokasi</a>
+                 
                     <a class="nav-item nav-link" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                         <i class="fas fa-sign-out-alt"></i> &nbsp;{{ __('Logout') }}
                     </a>
@@ -106,7 +106,7 @@
                                 <li><a href="{{url('/data_laporan')}}">Data Laporan</a></li>
                                 <li><a href="{{url('/profil')}}">Profil</a></li>
                                 <li><a href="{{url('/tentang')}}">Kontak Kami</a></li>
-                                <li><a href="{{url('/lokasi')}}">Masukan Lokasi</a></li>
+                           
 
 
 

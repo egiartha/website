@@ -1,11 +1,11 @@
 @extends('layouts.admin')
 @section('content')
-<title>Data Pengajuan | Layanan Pengaduan Masyarakat</title>
+<title>Data Pengaduan | Layanan Pengaduan Masyarakat</title>
 
 <div class="row">
     <div class="col-lg-12">
         <div class="main-card mb-3 card">
-            <div class="card-body"><h5 class="card-title">Data Pengajuan</h5><br>
+            <div class="card-body"><h5 class="card-title">Data Pengaduan</h5><br>
                 <div class="table-responsive">
                     <table class="mb-0 table" id="example">
                         <thead>

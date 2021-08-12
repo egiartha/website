@@ -41,7 +41,6 @@
                             
                             <td>
                                 <a href="/masyarakat_lihat/{{$value->id}}"><i class="fas fa-eye text-primary"></i></a>
-                                <a href="/masyarakat_edit/{{$value->id}}"><i class="fas fa-edit text-success"></i></a>
                                 <a href="/masyarakat_hapus/{{$value->id}}" class="button delete-confirm"><i class="fas fa-trash text-danger"></i></a>
                             </td>
                         </tr>

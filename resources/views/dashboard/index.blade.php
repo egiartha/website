@@ -7,7 +7,7 @@
                     <div class="widget-content-wrapper text-white">
                         <div class="widget-content-left">
                             <div class="widget-heading">Total Pengaduan</div>
-                            <div class="widget-subheading">Pengajuan dan Aspirasi</div>
+                            <div class="widget-subheading">Pengaduan dan Aspirasi</div>
                         </div>
                         <div class="widget-content-right">
                         <div class="widget-numbers text-white"><span>{{$pengaduan->count()}}</span></div>

@@ -88,6 +88,12 @@
                                 <input type="number" class="form-control @error('telp') is-invalid @enderror" name="telp" value="{{old('telp')}}" required>
                             </div>
                         </div>
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <label for="alamat">Alamat : @error('alamat') <span class="text-danger ">{{$message}}</span> @enderror</label>
+                                <input type="text" class="form-control @error('alamat') is-invalid @enderror" name="alamat" value="{{old('alamat')}}" required>
+                            </div>
+                        </div>
                         
                         <div class="col-lg-12">
                             <div class="form-group">

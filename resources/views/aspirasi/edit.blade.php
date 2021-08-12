@@ -84,7 +84,7 @@
                                 @endif
                                 
                                 <div class="col-lg-12">
-                                    <label for="status"><b>Status Pengaduan :</b> </label>
+                                    <label for="status"><b>Status Tanggapan :</b> </label>
                                     <select name="status" id="status" class="form-control">
                                         <option value="" selected disabled>~ Status Pengaduan ~</option>
                                         @if($value->status == '0')

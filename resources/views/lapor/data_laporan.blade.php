@@ -141,7 +141,7 @@
                                         <div class="row">
                                             <h5 class="mt-2 ml-4">
                                                 @if($value->kategori == 'pengajuan')
-                                                    Pengajuan
+                                                    Pengaduan
                                                 @else
                                                     Aspirasi
                                                 @endif
@@ -196,7 +196,7 @@
                                         <div class="row">
                                             <h5 class="mt-2 ml-4">
                                                 @if($value->kategori == 'pengajuan')
-                                                    Pengajuan
+                                                    Pengaduan
                                                 @else
                                                     Aspirasi
                                                 @endif
@@ -251,7 +251,7 @@
                                         <div class="row">
                                             <h5 class="mt-2 ml-4">
                                                 @if($value->kategori == 'pengajuan')
-                                                    Pengajuan
+                                                    Pengaduan
                                                 @else
                                                     Aspirasi
                                                 @endif
@@ -306,7 +306,7 @@
                                         <div class="row">
                                             <h5 class="mt-2 ml-4">
                                                 @if($value->kategori == 'pengajuan')
-                                                    Pengajuan
+                                                    Pengaduan
                                                 @else
                                                     Aspirasi
                                                 @endif
@@ -361,7 +361,7 @@
                                             <div class="row">
                                                 <h5 class="mt-2 ml-4">
                                                     @if($value->kategori == 'pengajuan')
-                                                        Pengajuan
+                                                        Pengaduan
                                                     @else
                                                         Aspirasi
                                                     @endif

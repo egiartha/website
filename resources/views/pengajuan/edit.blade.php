@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 @section('content')
-<title>Edit Data Pengajuan | Layanan Pengaduan Masyarakat</title>
+<title>Edit Data Pengaduan | Layanan Pengaduan Masyarakat</title>
 <div class="row">
     <div class="col-lg-12">
         <div class="main-card mb-3 card">
@@ -10,7 +10,7 @@
                         <a class="nav-link" id="data-tab" data-toggle="tab" href="#data" role="tab" aria-controls="data" aria-selected="true">Data</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="pengajuan-tab" data-toggle="tab" href="#pengajuan" role="tab" aria-controls="pengajuan" aria-selected="false">Pengajuan</a>
+                        <a class="nav-link" id="pengajuan-tab" data-toggle="tab" href="#pengajuan" role="tab" aria-controls="pengajuan" aria-selected="false">Pengaduan</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" id="tanggapan-tab" data-toggle="tab" href="#tanggapan" role="tab" aria-controls="tanggapan" aria-selected="false">Tanggapan</a>
@@ -64,9 +64,9 @@
                                 </div>
                                 <div class="col-lg-8">
                                     <p>Laporan: {{$value->isi_laporan}}</p>
-                                    <p>Alamat Lokasi Laporan: {{$value->isi_laporan}}</p>
-                                    <p>Desa: {{$value->isi_laporan}}</p>
-                                    <p>Kecamatan: {{$value->isi_laporan}}</p>
+                                    <p>Alamat Lokasi Laporan: {{$value->alamat}}</p>
+                                    <p>Desa: {{$value->desa}}</p>
+                                    <p>Kecamatan: {{$value->kecamatan}}</p>
                                 </div>
                             </div>
                         </div>

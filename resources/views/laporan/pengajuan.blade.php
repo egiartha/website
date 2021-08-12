@@ -1,12 +1,12 @@
 @extends('layouts.admin')
 @section('content')
-<title>Laporan Pengajuan | Layanan Pengaduan Masyarakat</title>
+<title>Laporan Pengaduan | Layanan Pengaduan Masyarakat</title>
 
 <div class="row">
     <div class="col-lg-8">
                 <div class="card">
                     <div class="card-header">
-                        Filter Laporan Pengajuan
+                        Filter Laporan Pengaduan
                     </div>
                 </div>
         <div class="main-card mb-3 card">

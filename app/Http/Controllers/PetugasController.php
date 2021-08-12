@@ -56,6 +56,7 @@ class PetugasController extends Controller
             'nama' => ['required', 'string'],
             'username' => ['required', 'max:255','unique:users'],
             'telp' => ['required', 'max:255'],
+            'alamat' => ['required'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'confirmed'],
         ]);
@@ -68,6 +69,7 @@ class PetugasController extends Controller
             'username'=>$request->username,
             'telp'=>$request->telp,
             'email'=>$request->email,
+            'alamat'=>$request->alamat,
             'level'=>$request->level,
             'password'=>bcrypt($request->password),
         ]);   

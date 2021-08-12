@@ -197,7 +197,7 @@
                                     <li>
                                         <a href="/pengajuan">
                                             <i class="metismenu-icon"></i>
-                                            Pengajuan
+                                            Pengaduan
                                         </a>
                                     </li>
                                     <li>
@@ -238,7 +238,7 @@
                                     <li>
                                         <a href="/laporan_pengajuan">
                                             <i class="metismenu-icon"></i>
-                                            Pengajuan
+                                            Pengaduan
                                         </a>
                                     </li>
                                     <li>
@@ -305,7 +305,7 @@
                                         <span class="btn-icon-wrapper pr-2 opacity-7">
                                             <i class="fa fa-business-time fa-w-20"></i>
                                         </span>
-                                        Pengajuan
+                                        Pengaduan
                                     </button>
                                     <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu dropdown-menu-right">
                                         <ul class="nav flex-column">
