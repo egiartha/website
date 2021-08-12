@@ -44,8 +44,19 @@
                                 <tr>
                                     <th>Status</th>
                                     <td>:</td>
-                                    <td>{{$value->status==0?'belum diproses':$value->status}} </td>
+                                    <td>{{$value->status==="0"?'belum diproses':$value->status}} </td>
                                 </tr>
+                                <tr>
+                                    <th>Longitude</th>
+                                    <td>:</td>
+                                    <td>{{$value->longitude}} </td>
+                                </tr>
+                                <tr>
+                                    <th>Latitude</th>
+                                    <td>:</td>
+                                    <td>{{$value->latitude}} </td>
+                                </tr>
+
                                 <tr>
                                     <th style="vertical-align: top;">Lokasi</th>
                                     <td style="vertical-align: top;">:</td>
@@ -170,11 +181,16 @@
             zoom: 16
         })
 
-        marker = L.marker(mark).addTo(map)
-
         L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map)
+
+        L.popup({
+                closeButton: false
+            })
+            .setLatLng(mark)
+            .setContent('<p><b>{{$pengaduan[0]->alamat}}, {{$pengaduan[0]->desa}}, Kec. {{$pengaduan[0]->kecamatan}}</b></p><a target="_blank" href="http://maps.google.com/maps?q={{$pengaduan[0]->latitude}},{{$pengaduan[0]->longitude}}">Lihat di Google Maps</a>')
+            .openOn(map);
     });
 </script>
 @endpush

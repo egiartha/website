@@ -101,4 +101,35 @@ class LaporController extends Controller
         $pdf = PDF::loadview('lapor.print', compact('pengaduan'));
         return $pdf->stream();
     }
+
+    public function edit($id)
+    {
+        $pengaduan = DB::table('tb_pengaduan')->where('kode_pengaduan', $id)->first();
+
+        return view('lapor.edit', compact('pengaduan'));
+    }
+
+    public function lapor_edit_store(Request $request)
+    {
+        $nama_file = null;
+        $file = $request->file('foto_pengaduan');
+        if ($file) {
+            $nama_file = time() . "_" . $file->getClientOriginalName();
+            // isi dengan nama folder tempat kemana file diupload
+            $tujuan_upload = 'database/foto_pengaduan';
+            $file->move($tujuan_upload, $nama_file);
+        }
+
+        $data = $request->all();
+        unset($data['_token']);
+
+        if ($nama_file) {
+            $data['foto_pengaduan'] = $nama_file;
+            DB::table('tb_pengaduan')->where('kode_pengaduan', $data['kode_pengaduan'])->update($data);
+        } else {
+            DB::table('tb_pengaduan')->where('kode_pengaduan', $data['kode_pengaduan'])->update($data);
+        }
+
+        return redirect('/data_laporan')->withSuccessMessage('Data Berhasil Diubah');
+    }
 }

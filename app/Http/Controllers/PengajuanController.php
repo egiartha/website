@@ -9,9 +9,22 @@ use PDF;
 
 class PengajuanController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $pengaduan = DB::table("tb_pengaduan")->where('kategori', 'pengajuan')->orderBy('kode_pengaduan', 'DESC')->get();
+        $initial = ['kategori', 'pengajuan'];
+
+        $status = $request->input('status') || $request->input('status') !== 0 ? ['status', $request->input('status')] : null;
+        $kecamatan = $request->input('kecamatan') ? ['kecamatan', $request->input('kecamatan')] : null;
+
+        $where = array_merge([$initial], [$status], [$kecamatan]);
+
+        $new_where = array_filter($where, function ($val) {
+            if ($val && $val[1]) {
+                return $val;
+            }
+        });
+
+        $pengaduan = DB::table("tb_pengaduan")->where($new_where)->orderBy('kode_pengaduan', 'DESC')->get();
         return view('pengajuan.index', compact('pengaduan'));
     }
     public function lihat($id)
