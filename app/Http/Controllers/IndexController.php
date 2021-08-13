@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 use Auth;
+
 class IndexController extends Controller
 {
     public function __construct()
@@ -14,6 +15,11 @@ class IndexController extends Controller
     public function index()
     {
         $aplikasi = DB::table('settings')->first();
-        return view('masyarakat.index',compact('aplikasi'));
+        $pengaduan = DB::table('tb_pengaduan')
+            ->join('users', function ($join) {
+                $join->on('tb_pengaduan.user_id', '=', 'users.id');
+            })
+            ->where('kategori', 'pengajuan')->orderBy('tgl_pengaduan', 'desc')->get();
+        return view('masyarakat.index', compact('aplikasi', 'pengaduan'));
     }
 }
