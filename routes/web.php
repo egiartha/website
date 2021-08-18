@@ -102,6 +102,8 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('change-password', 'ChangePasswordController@index');
     Route::post('change-password', 'ChangePasswordController@store')->name('change.password');
+    Route::get('/notifikasi', 'NotifikasiController@index');
+    Route::post('/komentar/store', 'KomentarController@store');
 });
 
 

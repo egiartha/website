@@ -7,6 +7,7 @@ use Validator;
 use DB;
 use Auth;
 use Alert;
+use App\Komentar;
 use PDF;
 
 class LaporController extends Controller
@@ -61,8 +62,15 @@ class LaporController extends Controller
             'longitude' => $request->longitude,
             'latitude' => $request->latitude
         ]);
+
+        DB::table('notifikasi')->insert([
+            'deskripsi' => "Pengaduan Baru",
+            'id_pengaduan' => $kode,
+            'created_at' => date('Y-m-d H:i:s')
+        ]);
         return redirect()->back()->withSuccessMessage('Data Berhasil Dikirim');
     }
+
     public function data_laporan()
     {
         $all = DB::table("tb_pengaduan")->where('user_id', Auth::user()->id)->get();
@@ -84,7 +92,9 @@ class LaporController extends Controller
             $petugas = DB::table('users')->where('id', $data[0]->id_petugas)->first();
         }
 
-        return view('lapor.lihat', compact('data', 'petugas'));
+        $komentar = Komentar::query()->with('users')->where('id_pengaduan', $id)->get();
+
+        return view('lapor.lihat', compact('data', 'petugas', 'komentar'));
     }
     public function hapus($id)
     {

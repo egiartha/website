@@ -64,6 +64,9 @@
                                                         <td style="vertical-align:top;">:</td>
                                                         <td>{{$value->isi_laporan}}</td>
                                                     </tr>
+                                                    <tr>
+                                                        <td><button data-toggle="modal" data-id="{{$value->kode_pengaduan}}" data-target="#modal" class="btn btn-primary my-3 komentar">Tambahkan Komentar</button></td>
+                                                    </tr>
                                                 </tbody>
                                             </table>
                                         </div>
@@ -82,4 +85,42 @@
     </section>
 </main>
 
+<div class="modal fade" id="modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Tambahkan Komentar</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form action="/komentar/store" method="POST">
+                @csrf
+                <input type="hidden" id="kode" name="id_pengaduan">
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Komentar</label>
+                        <textarea name="komentar" class="form-control" rows="3"></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                    <button type="submit" class="btn btn-primary">Kirim</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
 @endsection
+
+@push('scripts')
+<script>
+    $(document).ready(function() {
+        $('.komentar').click(function() {
+            let val = $(this).data('id');
+            $('#kode').val(val);
+        })
+    })
+</script>
+@endpush
