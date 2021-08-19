@@ -68,6 +68,8 @@
                                             </table>
                                         </div>
                                         <div class="col-md-4">
+                                        <th style="vertical-align:top;"><b>Foto Selesai Perbaikan</th></b>
+                                        <td style="vertical-align:top;">:</td>
                                             <img style="width:100%;" src="{{ asset('database/foto_selesai').'/'. $value->foto_pengaduan}}" alt="foto selesai">
                                         </div>
                                     </div>

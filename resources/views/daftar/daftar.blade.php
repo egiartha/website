@@ -71,7 +71,8 @@
                     <button type="submit" class="btn btn-primary w-100 mb-2">
                         Register
                     </button>
-                </form>
+                    <a href = "javascript:history.back()"class="btn btn-primary w-100 mb-2">Kembali</a>
+               
             </div>
         </div>
     </div>

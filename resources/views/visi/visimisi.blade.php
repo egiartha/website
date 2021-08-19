@@ -62,7 +62,10 @@
             </p>
           </div>
           <div class="col-md-6 mb-5 mb-md-0" data-aos="fade-up">
-            <img src="{{url('assets/fitur/assets/img/undraw_svg_4.svg')}}" alt="Image" class="img-fluid">
+            <p><img src="{{url('assets/fitur/assets/img/foto rapat mei.jpg')}}" alt="Image" class="img-fluid">
+          </div>
+          <div class="col-md-6 mb-5 mb-md-0" data-aos="fade-up">
+            <p><img src="{{url('assets/fitur/assets/img/forum LLAJ.jpeg')}}" alt="Image" class="img-fluid">
           </div>
           <div class="col-md-6 mb-5 mb-md-0" data-aos="fade-up">
             <p>
@@ -70,7 +73,15 @@
             </p>
           </div>
           <div class="col-md-6 mb-5 mb-md-0" data-aos="fade-up">
-            <img src="{{url('assets/fitur/assets/img/undraw_svg_4.svg')}}" alt="Image" class="img-fluid">
+            <p>
+            Forum Lalu Lintas dan Angkutan Jalan sebagaimana disebutkan pada Peraturan Pemerintah Republik Indonesia Nomor 37 Tahun 2011 Tentang Forum Lalu Lintas Dan Angkutan Jalan adalah wahana koordinasi antar instansi penyelenggara lalu lintas dan angkutan jalan. Forum Lalu Lintas dan Angkutan Jalan berfungsi sebagai wahana untuk menyinergikan tugas pokok dan fungsi setiap penyelenggara lalu lintas dan angkutan jalan dalam penyelenggaraan lalu lintas dan angkutan jalan.
+            Fungsi menyinergikan dimaksudkan untuk:
+1. Menganalisis permasalahan;
+2. Menjembatani, menemukan solusi, dan meningkatkan kualitas pelayanan. Salah satu upaya Pemerintah untuk mengatasi masalah tersebut adalah dengan mendorong Pemerintah Daerah untuk meningkatkan peran dalam pembangunan insfrastruktur jalan melalui Program Hibah Peningkatan Kinerja dan Pemeliharaan Jalan Provinsi (PRIM).
+          </p>
+          </div>
+          <div class="col-md-6 mb-5 mb-md-0" data-aos="fade-up">
+           <p> <img src="{{url('assets/fitur/assets/img/laju.jpeg')}}" alt="Image" class="img-fluid">
           </div>
           </h2>
           </div>

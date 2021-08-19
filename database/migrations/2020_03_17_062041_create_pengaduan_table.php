@@ -19,6 +19,9 @@ class CreatePengaduanTable extends Migration
             $table->date('tgl_tanggapan');
             $table->integer('user_id');
             $table->string('isi_laporan');
+            $table->string('alamat');
+            $table->string('desa');
+            $table->string('kecamatan');
             $table->string('tanggapan')->default('0');
             $table->string('foto_pengaduan');
             $table->enum('kategori',['pengajuan','aspirasi']);

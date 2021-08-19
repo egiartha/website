@@ -72,12 +72,25 @@
                                                 </tr>
 
                                                 <tr class="">
-                                                    <td><b>Kategori<span style="margin-left: 45px">:</span></b> <span style="margin-left: 50px">{{$value->tgl_pengaduan}}</span> </td>
+                                                    <td><b>Kategori<span style="margin-left: 45px">:</span></b> <span style="margin-left: 50px">{{$value->kategori}}</span> </td>
                                                 </tr>
 
                                                 <tr class="">
                                                     <td><b>Status<span style="margin-left: 59px">:</span></b> <span style="margin-left: 50px">@if($value->status =='0') Belum di proses @else {{$value->status}} @endif </span> </td>
                                                 </tr>
+                                                <tr class="">
+                                                    <td><b>Laporan<span style="margin-left: 45px">:</span></b> <span style="margin-left: 50px">{{$value->isi_laporan}}</span> </td>
+                                                </tr>
+                                                <tr>
+                                                <td><b>Laporan<span style="margin-left: 45px">
+                                                        <td style="vertical-align:top;">:</td>
+                                                        <td>{{$value->alamat}}, {{$value->desa}}, Kec. {{$value->kecamatan}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td><a target="_blank" href="http://maps.google.com/maps?q={{$value->latitude}},{{$value->longitude}}">Lihat di Google Maps</a></td>
+                                                    </tr>
 
                                                 <tr class="">
                                                     <td><b>Foto<span style="margin-left: 73px">:</span></b> <span style="margin-left: 50px">

@@ -27,8 +27,15 @@
 						</div>
 					</div>
 					<button type="submit" class="btn btn-primary w-100 mb-2">
-							{{ __('Login') }}
+							{{ __('Login') }}	
 					</button>	
+					<button type="submit" class="btn btn-primary w-100 mb-2">
+					
+							<a class="btn-primary w-100 mb-2" href="/daftar">{{ __('Register') }}</a>		
+					</button>
+					<div class="alert alert-success" role="alert">
+						<br>Belum punya akun? Lakukan Registerasi</br>
+						</div>
 					@if( Session::get('alert') !="")
 						<div class='alert alert-success'><center><b>{{Session::get('alert')}}</b></center></div>
 					@endif

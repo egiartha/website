@@ -106,22 +106,33 @@
                                 <li><a href="{{url('/data_laporan')}}">Data Laporan</a></li>
                                 <li><a href="{{url('/profil')}}">Profil</a></li>
                                 <li><a href="{{url('/tentang')}}">Kontak Kami</a></li>
-                           
-
-
-
-
                             </ul>
                         </div>
 
                         <div class="col-lg-4 col-md-6 footer-contact">
                             <h4>Contact Us</h4>
                             <p>
+                                
                                 Jl. Pembangunan Sambas <br>
+                                Desa Dalam Kaum,br>
                                 Kecamatan Sambas<br>
                                 Kabupaten Sambas <br>
-                                <strong>Phone:</strong> 0899 5592 781<br>
+                                Kalimantan Barat (79462)<br>
+                                <strong>Phone:</strong>  +1 5589 55488 55 <br>
                                 <strong>Email:</strong> dishubsambas@gmail.com<br>
+                            </p>
+                        </div>
+                        <div class="col-lg-4 col-md-6 footer-contact">
+                            <h4>FLLAJ SAMBAS</h4>
+                            <p>
+                            Forum Lalu Lintas dan Angkutan Jalan sebagaimana disebutkan pada Peraturan Pemerintah Republik Indonesia Nomor 37 Tahun 2011 Tentang Forum Lalu Lintas Dan Angkutan Jalan adalah wahana koordinasi antar instansi penyelenggara lalu lintas dan angkutan jalan.
+                            </p>
+                        </div>
+                        <div class="col-lg-4 col-md-6 footer-contact">
+                            <h4>Jam Kerja</h4>
+                            <p>
+                            Senin - Kamis: 08.00 - 16.00<br>
+                            Jum'at: 08.00 - 11.00
                             </p>
                         </div>
                     </div>

@@ -52,8 +52,9 @@
             <div class="container">
                 <div class="row mb-5 align-items-end">
                     <div class="col-md-6" data-aos="fade-up">
-
-                        <h2>Form Edit Pengaduan</h2>
+                    <button type="submit" class="btn btn-primary lapor">
+                    <h2>Form Edit Pengaduan</h2>
+					</button>	
                     </div>
 
                 </div>
@@ -142,8 +143,10 @@
                                 <input type="hidden" value="{{$pengaduan->latitude}}" id="latitude" name="latitude" />
 
                                 <div class="col-md-12 form-group">
-                                    <input type="submit" class="btn btn-primary btn-block" value="Ubah">
+                                    <input type="submit" class="btn btn-primary btn-block" value="Ubah">  
+                                    <a href = "javascript:history.back()"class="btn btn-primary btn-block" >Kembali</a>
                                 </div>
+                    
                             </div>
 
                         </form>
@@ -151,18 +154,29 @@
 
                     <div class="col-md-6 mb-5 mb-md-0" data-aos="fade-up">
 
-                        <div class="card">
-                            <h5 class="card-header">Petunjuk Pengaduan</h5>
-                            <div class="card-body">
+<div class="card">
+    <h5 class="card-header">Petunjuk Pengaduan</h5>
+    <div class="card-body">
 
-                                <p class="card-text">
-                                    <p>1. Anda diwajibkan untuk mengisikan kolom nama lengkap, nomor telepon, dan laporan pada formulir pengaduan.</p>
-                                    <p>2. Pelapor diharapkan untuk mengisikan laporan lokasi lampu PJU yang mati secara lengkap dan jelas guna mempercepat proses perbaikan.</p>
-                                    <p>3. Pelapor dimohon untuk mengisi formulir pengaduan dengan lengkap dan benar, data nama lengkap dan nomor telepon pelapor yang ditampilkan akan disamarkan.</p>
-                                    <p>4. Jika terdapat foto/file dapat dilampirkan sebagai file pendukung.</p>
-                                    <p>5. Perbaikan lampu PJU akan dilaksanakan secepat mungkin setelah laporan kami terima..</p>
-                                </p>
-                            </div>
+        <p class="card-text">
+            <p>1. Anda diwajibkan untuk mengisikan kolom isi laporan pada formulir pengaduan dan aspirasi.</p>
+            <p>2. Pelapor diharapkan untuk mengisikan laporan lokasi lampu PJU yang mati secara lengkap dan jelas guna mempercepat proses perbaikan.</p>
+            <p>3. Pelapor dimohon untuk mengisi formulir pengaduan dengan lengkap dan benar</p>
+            <p>4. Pelapor diwajibkan melampirkan foto/file dapat sebagai file pendukung.</p>
+            <p>5. Pelapor dapat mencari alamat saat melapor di maps yang tersedia.</p>
+            <p>6. Perbaikan lampu PJU akan dilaksanakan secepat mungkin setelah laporan kami terima..</p>
+        </p>
+    </div>
+    <div class="card">
+    <h5 class="card-header">Petunjuk Aspirasi</h5>
+    <div class="card-body">
+
+        <p class="card-text">
+            <p>Perhatian! Harap mengisikan formulir aspirasi dengan benar karena aspirasi yang anda masukan akan menjadi dasar perencanaan kegiatan kami.</p>
+            <p>**** Contoh: Jalan Desa Nagur Kecamatan Sambas Sebelah Jembatan Batu, Belum terdapat lampu PJU mohon untuk dipasang lampu pju dikarenakan mobilitas masyarakat diwilayah tersebut ramai</p>
+            
+        </p>
+         </div>
                         </div>
                     </div>
 
