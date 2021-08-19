@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use DB;
 use Auth;
 use PDF;
+use App\Komentar;
 
 class PengajuanController extends Controller
 {
@@ -29,6 +30,8 @@ class PengajuanController extends Controller
     }
     public function lihat($id)
     {
+        DB::table('notifikasi')->where('id_pengaduan', $id)->update(['is_read' => true]);
+
         $pengaduan = DB::table("tb_pengaduan")->where('kode_pengaduan', $id)
             ->join('users', function ($join) {
                 $join->on('tb_pengaduan.user_id', '=', 'users.id');
@@ -40,7 +43,10 @@ class PengajuanController extends Controller
         if ($pengaduan[0]->id_petugas) {
             $petugas = DB::table('users')->where('id', $pengaduan[0]->id_petugas)->first();
         }
-        return view('pengajuan.lihat', compact('pengaduan', 'petugas'));
+
+        $komentar = Komentar::query()->with('users')->where('id_pengaduan', $id)->get();
+
+        return view('pengajuan.lihat', compact('pengaduan', 'petugas', 'komentar'));
     }
 
     public function edit($id)

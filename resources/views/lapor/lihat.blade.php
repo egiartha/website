@@ -45,7 +45,7 @@
         <section class="section geser">
             <div class="container">
                 <div class="row\">
-                    <div class="card">
+                    <div class="card mb-5">
                         <div class="card-body shadow">
                             <ul class="nav nav-tabs" id="myTab" role="tablist">
                                 <li class="nav-item">
@@ -53,6 +53,9 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" id="tanggapan-tab" data-toggle="tab" href="#tanggapan" role="tab" aria-controls="tanggapan" aria-selected="false">Tanggapan</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="komentar-tab" data-toggle="tab" href="#komentar" role="tab" aria-controls="tanggapan" aria-selected="false">Komentar</a>
                                 </li>
                             </ul>
 
@@ -134,6 +137,17 @@
                                                 @endif
                                             </tbody>
                                         </table>
+                                        @endforeach
+                                    </div>
+                                </div>
+                                <div class="tab-pane" id="komentar" role="tabpanel" aria-labelledby="tanggapan-tab">
+                                    <p class="text-center mt-4"><b>Komentar Masyarakat</b></p>
+                                    <div class="card-body">
+                                        @foreach($komentar as $value)
+                                        <div style="border: 1px solid #DEE2E6; padding:15px;margin:5px">
+                                            <p><b>{{$value->users->nama}}</b>, {{date_format($value->created_at,'d/m/Y')}}</p>
+                                            <span>{{$value->komentar}}</span>
+                                        </div>
                                         @endforeach
                                     </div>
                                 </div>

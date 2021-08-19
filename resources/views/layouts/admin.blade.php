@@ -80,6 +80,14 @@
             </div>
             <div class="app-header__content">
                 <div class="app-header-right">
+                    <div class="dropdown dropleft">
+                        <button type="button" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown" class="btn btn-lg">
+                            <i class="fa fa-bell" style="font-size: 18px;" id="notifikasi_icon"></i>
+                        </button>
+                        <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu">
+                            <h6 class="dropdown-header" id="notifikasi_header">Daftar Notifikasi</h6>
+                        </div>
+                    </div>
                     <div class="header-btn-lg pr-0">
                         <div class="widget-content p-0">
                             <div class="widget-content-wrapper">
@@ -629,6 +637,27 @@
             e.preventDefault();
             $("#upload:hidden").trigger('click');
         });
+
+        $.ajax(({
+            url: '{{url("/notifikasi")}}',
+            success: function(res) {
+                const r = JSON.parse(res)
+                const count_unread = r.filter(({
+                    is_read
+                }) => is_read === 0)
+                if (count_unread.length > 0) {
+                    $("#notifikasi_icon").after(`<div style="position: absolute; padding:2px 4px; background-color: red; top:5px; right:10px; border-radius:999px; font-size:8px; color: white;">${count_unread.length}</div>`)
+                }
+
+                let html = "<div/>"
+
+                for (let i = 0; i < r.length; i++) {
+                    html += `<a href="/pengajuan_lihat/${r[i].id_pengaduan}" class="dropdown-item ${!r[i].is_read&&'active'}" href="#">${r[i].deskripsi}, ${r[i].id_pengaduan}</a>`
+                }
+
+                $('#notifikasi_header').after(html);
+            }
+        }))
     });
 </script>
 

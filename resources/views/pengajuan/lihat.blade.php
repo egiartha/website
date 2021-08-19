@@ -15,6 +15,9 @@
                     <li class="nav-item">
                         <a class="nav-link" id="tanggapan-tab" data-toggle="tab" href="#tanggapan" role="tab" aria-controls="tanggapan" aria-selected="false">Tanggapan</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="tanggapan-tab" data-toggle="tab" href="#komentar" role="tab" aria-controls="tanggapan" aria-selected="false">Komentar</a>
+                    </li>
                 </ul>
                 @foreach($pengaduan as $value)
                 <div class="tab-content">
@@ -107,6 +110,15 @@
                             </table>
                             @endif
                         </div>
+                    </div>
+                    <div class="tab-pane" id="komentar" role="tabpanel" aria-labelledby="tanggapan-tab">
+                        <p class="text-center mt-3"><b>Komentar masyarakat</b></p>
+                        @foreach($komentar as $value)
+                        <div style="border: 1px solid #DEE2E6; padding:15px;margin:5px">
+                            <p><b>{{$value->users->nama}}</b>, {{date_format($value->created_at,'d/m/Y')}}</p>
+                            <span>{{$value->komentar}}</span>
+                        </div>
+                        @endforeach
                     </div>
                 </div>
                 @endforeach
