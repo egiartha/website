@@ -6,7 +6,7 @@
 <!-- Jumbotron -->
 
 <body>
-    <div class="jumbotron jumbotron-fluid">
+    <!-- <div class="jumbotron jumbotron-fluid">
         <div class="container">
             <div id="runningtext">
                 <marquee behavior="scroll" scrollamount="6" onmouseover="this.stop();" onmouseout="this.start();" direction="left">
@@ -15,9 +15,9 @@
                 </marquee>
             </div>
 
-            <a href="/lapor" class="btn btn-primary lapor">Informasi dan Kontak Dishub Sambas<a />
-                <!-- ======= Mobile Menu ======= -->
-                <div class="site-mobile-menu site-navbar-target">
+            <a href="/lapor" class="btn btn-primary lapor">Informasi dan Kontak Dishub Sambas<a /> -->
+                <Mobile Menu ======= 
+                <!-- <div class="site-mobile-menu site-navbar-target">
                     <div class="site-mobile-menu-header">
                         <div class="site-mobile-menu-close mt-3">
                             <span class="icofont-close js-menu-toggle"></span>
@@ -28,6 +28,14 @@
         </div>
     </div>
     <main id="main">
+   <div class="container">
+        <div class="row mb-5 align-items-end">
+          <div class="col-md-6" data-aos="fade-up">
+
+            <h2>Alamat  Dan Lokasi Dinas Perhubungan Sambas</h2>
+          </div>
+
+        </div>
         <section class="section">
             <div class="container">
                 <div class="row mb-5 align-items-end">
@@ -41,6 +49,7 @@
             </div>
         </section>
     </main>
-</body>
+</body> -->
 <!-- akhir Jumbotron -->
+
 @endsection

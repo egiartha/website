@@ -35,5 +35,6 @@ class DaftarController extends Controller
             'password'=>bcrypt($request->password),
         ]);   
         return redirect('/login')->with('alert','Pendaftaraan berhasil, Silahkan login.');
+       
     }
 }

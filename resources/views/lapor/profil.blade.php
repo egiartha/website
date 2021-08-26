@@ -26,16 +26,17 @@
 </style>
 
 <!-- Jumbotron -->
-<div class="jumbotron jumbotron-fluid">
+<!-- <div class="jumbotron jumbotron-fluid">
   <div class="container">
     <marquee behavior="scroll" scrollamount="6" onmouseover="this.stop();" onmouseout="this.start();" direction="left">
         <h1 class="display-4">Biodata Mu  </h1>
         </marquee>  
    
   </div>
-</div>
+</div> -->
 <!-- akhir Jumbotron -->
   <!-- ======= Mobile Menu ======= -->
+ 
   <div class="site-mobile-menu site-navbar-target">
     <div class="site-mobile-menu-header">
       <div class="site-mobile-menu-close mt-3">
@@ -47,6 +48,14 @@
 
  
 <main id="main"> 
+    <div class="container">
+        <div class="row mb-5 align-items-end">
+          <div class="col-md-6" data-aos="fade-up">
+
+            <h2>Biodata Saya</h2>
+          </div>
+
+        </div>
 <section class="section geser">
     <div class="container-fluid">
         <div class="row">
@@ -140,7 +149,7 @@
                             </div>
                             
                             <div class="form-group">
-                                <label for="password">Password Lama @error('password') <span class="text-danger">{{$message}} </span> @enderror </label>
+                                <label for="password">Password Baru @error('password') <span class="text-danger">{{$message}} </span> @enderror </label>
                                 <input type="password" name="password" id="password" class="form-control" required>
                             </div>
                             

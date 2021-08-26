@@ -24,7 +24,7 @@
 
 
     <!-- Jumbotron -->
-    <div class="jumbotron jumbotron-fluid">
+    <!-- <div class="jumbotron jumbotron-fluid">
         <div class="container">
             <marquee behavior="scroll" scrollamount="6" onmouseover="this.stop();" onmouseout="this.start();" direction="left">
                 <h1 class="display-4">Form Edit Pengaduan </h1>
@@ -32,7 +32,7 @@
 
             <a href="javascript::void(0)" class="btn btn-primary lapor">Sampaikan pengaduan melalui form dibawah</a>
         </div>
-    </div>
+    </div> -->
     <!-- akhir Jumbotron -->
 
     <!-- ======= Mobile Menu ======= -->
@@ -48,16 +48,17 @@
     <br><br>
     <main id="main">
 
-        <section class="section">
-            <div class="container">
-                <div class="row mb-5 align-items-end">
-                    <div class="col-md-6" data-aos="fade-up">
-                    <button type="submit" class="btn btn-primary lapor">
-                    <h2>Form Edit Pengaduan</h2>
-					</button>	
-                    </div>
+    <section class="section">
+      <div class="container">
+        <div class="row mb-5 align-items-end">
+          <div class="col-md-6" data-aos="fade-up">
 
-                </div>
+            <h2>From Edit Laporan</h2>
+          </div>
+
+        </div>
+
+        <div class="row">
 
                 <div class="row">
 

@@ -19,7 +19,7 @@
 
  
 <!-- Jumbotron -->
-<div class="jumbotron jumbotron-fluid">
+<!-- <div class="jumbotron jumbotron-fluid">
   <div class="container">
     <marquee behavior="scroll" scrollamount="6" onmouseover="this.stop();" onmouseout="this.start();" direction="left">
       <h1 class="display-4">Visi Misi  </h1>
@@ -27,7 +27,7 @@
  
     <a href="javascript::void(0)" class="btn btn-primary lapor">Sampaikan pengaduan melalui form dibawah</a>
   </div>
-</div>
+</div> -->
 <!-- akhir Jumbotron -->
 
   <!-- ======= Mobile Menu ======= -->

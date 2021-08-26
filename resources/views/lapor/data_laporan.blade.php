@@ -22,7 +22,7 @@
     </style>
 
     <!-- Jumbotron -->
-    <div class="jumbotron jumbotron-fluid">
+    <!-- <div class="jumbotron jumbotron-fluid">
         <div class="container">
             <marquee behavior="scroll" scrollamount="6" onmouseover="this.stop();" onmouseout="this.start();" direction="left">
                 <h1 class="display-4">Data Laporan </h1>
@@ -30,7 +30,7 @@
 
             <a href="javascript::void(0)" class="btn btn-primary lapor">Kumpulan data pengaduan Anda </a>
         </div>
-    </div>
+    </div> -->
     <!-- akhir Jumbotron -->
     <!-- ======= Mobile Menu ======= -->
     <div class="site-mobile-menu site-navbar-target">
@@ -44,6 +44,14 @@
 
 
     <main id="main">
+    <div class="container">
+        <div class="row mb-5 align-items-end">
+          <div class="col-md-6" data-aos="fade-up">
+
+            <h2>Data Laporan</h2>
+          </div>
+
+        </div>
         <section class="section geser">
             <div class="container-fluid">
                 <div class="row">

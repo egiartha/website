@@ -19,7 +19,7 @@ class IndexController extends Controller
             ->join('users', function ($join) {
                 $join->on('tb_pengaduan.user_id', '=', 'users.id');
             })
-            ->where('kategori', 'pengajuan')->orderBy('tgl_pengaduan', 'desc')->get();
+            ->orderBy('tgl_pengaduan', 'desc')->get();
         return view('masyarakat.index', compact('aplikasi', 'pengaduan'));
     }
 }

@@ -24,7 +24,7 @@
 
 
     <!-- Jumbotron -->
-    <div class="jumbotron jumbotron-fluid">
+    <!-- <div class="jumbotron jumbotron-fluid">
         <div class="container">
             <marquee behavior="scroll" scrollamount="6" onmouseover="this.stop();" onmouseout="this.start();" direction="left">
                 <h1 class="display-4">Form Pengaduan dan Aspirasi </h1>
@@ -32,7 +32,7 @@
 
             <a href="javascript::void(0)" class="btn btn-primary lapor">Sampaikan pengaduan melalui form dibawah</a>
         </div>
-    </div>
+    </div> -->
     <!-- akhir Jumbotron -->
 
     <!-- ======= Mobile Menu ======= -->
@@ -47,15 +47,18 @@
 
     <br><br>
     <main id="main">
+    <section class="section">
+        <div class="container">
+        <div class="row mb-5 align-items-end">
+          <div class="col-md-6" data-aos="fade-up">
 
-        <section class="section">
-            <div class="container">
-                <div class="row mb-5 align-items-end">
-                    <div class="col-md-6" data-aos="fade-up">
-                    <button type="submit" class="btn btn-primary lapor">
-                    <h3>Form Pengaduan dan Aspirasi</h3>
+            <h2>Form Lapor Pengaduan Dan Aspirasi</h2>
+            <button type="submit" class="btn btn-primary lapor">
+                    <h5>Sampaikan Pengaduan dan Aspirasi Anda Disini</h5>
 					</button>	
-                    </div>
+          </div>
+
+        
 
                 </div>
 
@@ -176,7 +179,7 @@
                                  </div>
                         </div>
                     </div>
-                    <
+                    
 
 
 </div>

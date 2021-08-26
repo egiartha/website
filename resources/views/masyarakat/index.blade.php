@@ -4,7 +4,7 @@
 </style>
 <title>Home | Layanan Pengaduan Masyarat</title>
 <!-- Jumbotron -->
-<div class="jumbotron jumbotron-fluid">
+<!-- <div class="jumbotron jumbotron-fluid">
     <div class="container">
         @if($aplikasi=='')
         <h1 class="display-4">Layanan Pengaduan Masyarakat</h1>
@@ -14,16 +14,77 @@
         <a href="/lapor" class="btn btn-primary lapor">Sampaikan Pengaduan Disini</a>
         @endif
     </div>
-</div>
+</div> -->
 <!-- akhir Jumbotron -->
+
+<!-- <section id="intro">
+    <div class="intro-container">
+      <div id="introCarousel" class="carousel  slide carousel-fade" data-ride="carousel">
+
+        <ol class="carousel-indicators"></ol>
+
+        <div class="carousel-inner" role="listbox">
+
+          <div class="carousel-item active">
+            <div class="carousel-background"><img src="{{asset('ftemplate/img/intro-carousel/1.jpg')}}" alt=""></div>
+            <div class="carousel-container">
+              <div class="carousel-content">
+                <h2>Selamat datang </h2>
+                <h1>di Website MTs Negeri 3 Mempawah</h1>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="carousel-background"><img src="{{asset('assets/img/logo21.jpg ')}}" alt=""></div>
+            <div class="carousel-container">
+              <div class="carousel-content">
+                
+                <h2>Unggul dalam Kualitas </h2>
+                <h1>dengan Berlandaskan pada Iman dan Taqwa</h1>
+              </div>
+            </div>
+          </div>
+
+		  <div class="carousel-item">
+            <div class="carousel-background"><img src="{{asset('ftemplate/img/intro-carousel/3.jpg')}}" alt=""></div>
+            <div class="carousel-container">
+              <div class="carousel-content">
+                
+                <h2>MTsN 3 Mempawah</h2>
+                <h1>Madrasah Hebat Bermartabat</h1>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <a class="carousel-control-prev" href="#introCarousel" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon ion-chevron-left" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+
+        <a class="carousel-control-next" href="#introCarousel" role="button" data-slide="next">
+          <span class="carousel-control-next-icon ion-chevron-right" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+
+      </div>
+    </div> -->
 
 <main>
     <section class="section mb-5">
-        <div class="container">
-            <div class="card">
-                <div class="card-header">
-                    Laporan Pengaduan
-                </div>
+    <div class="container">
+        <div class="row mb-5 align-items-end">
+          <div class="col-md-6" data-aos="fade-up">
+
+            <h2>Timeline Aduan Masuk</h2>
+            <button type="submit" class="btn btn-primary lapor">
+                    <h5>Semua Aduan Masyarakat Dapat di Lihat Disini</h5>
+					</button>	
+          </div>
+
+        </div>
                 <div class="card-body">
                     <div class="row">
                         @foreach($pengaduan as $value)
@@ -55,6 +116,11 @@
                                                         <td>{{$value->alamat}}, {{$value->desa}}, Kec. {{$value->kecamatan}}</td>
                                                     </tr>
                                                     <tr>
+                                                        <th style="vertical-align:top;">Kategori</th>
+                                                        <td style="vertical-align:top;">:</td>
+                                                        <td>{{$value->kategori}}</td>
+                                                    </tr>
+                                                    <tr>
                                                         <td></td>
                                                         <td></td>
                                                         <td><a target="_blank" href="http://maps.google.com/maps?q={{$value->latitude}},{{$value->longitude}}">Lihat di Google Maps</a></td>
@@ -70,11 +136,12 @@
                                                 </tbody>
                                             </table>
                                         </div>
-                                        <div class="col-md-4">
-                                        <th style="vertical-align:top;"><b>Foto Selesai Perbaikan</th></b>
-                                        <td style="vertical-align:top;">:</td>
-                                            <img style="width:100%;" src="{{ asset('database/foto_selesai').'/'. $value->foto_pengaduan}}" alt="foto selesai">
-                                        </div>
+                                        <tr class="">
+                                                    <td><b>Foto Perbaikan</b></td>
+                                                    <td><b>:</b></td>
+                                                    <td><img style="width:100px; height:150px" src="{{ asset('database/foto_selesai').'/'. $value->foto_selesai}}" alt="foto selesai"> </td>
+                                        </tr>
+</div>
                                     </div>
                                 </div>
                             </div>

@@ -6,7 +6,8 @@ use Illuminate\Http\Request;
 use Validator;
 use DB;
 use Auth;
-use Alert;
+use RealRashid\SweetAlert\Facades\Alert;
+
 use PDF;
 use Hash;
 class ProfilController extends Controller
@@ -38,6 +39,7 @@ class ProfilController extends Controller
         $isi = DB::table("users")->where('id',$request->id)->update([
             'foto_profil' => $nama_foto
         ]);
+        Alert::success('Sukses', 'Foto berhasil diubah');
         return redirect()->back()->withSuccessMessage('Gambar berhasil di ubah');
     }
 
@@ -63,6 +65,7 @@ class ProfilController extends Controller
             'username'=>$request->username,
             'email'=>$request->email,
         ]);
+        Alert::success('Sukses', 'Identitas berhasil diubah');
         return redirect()->back()->withSuccessMessage('Data berhasil diubah');
     }
 
@@ -71,6 +74,7 @@ class ProfilController extends Controller
         DB::table('users')->where('id',$id)->update([
             'foto_profil'=>'0'
         ]);
+     
         return redirect()->back()->withSuccessMessage("Foto profil berhasil dihapus");
     }
 
@@ -89,9 +93,11 @@ class ProfilController extends Controller
             DB::table('users')->where('id',$request->id)->update([
                 'password'=> Hash::make($request->password)
             ]);
+            Alert::success('Sukses', 'Password berhasil diubah');
             return redirect()->back()->withSuccessMessage('Password Berhasil Diubah');
         }
         else{
+            Alert::success('Gagal', 'Password lama yang Anda masukkan salah');
             return redirect()->back()->withErrorMessage('Gagal, password lama yang Anda masukkan salah');
         }
     }

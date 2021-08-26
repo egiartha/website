@@ -6,9 +6,11 @@ use Illuminate\Http\Request;
 use Validator;
 use DB;
 use Auth;
-use Alert;
+use RealRashid\SweetAlert\Facades\Alert;
 use App\Komentar;
 use PDF;
+
+
 
 class LaporController extends Controller
 {
@@ -68,6 +70,7 @@ class LaporController extends Controller
             'id_pengaduan' => $kode,
             'created_at' => date('Y-m-d H:i:s')
         ]);
+        Alert::success('Sukses', 'Pengaduan Berhasil Dikirim');
         return redirect()->back()->withSuccessMessage('Data Berhasil Dikirim');
     }
 
@@ -129,6 +132,7 @@ class LaporController extends Controller
             $tujuan_upload = 'database/foto_pengaduan';
             $file->move($tujuan_upload, $nama_file);
         }
+       
 
         $data = $request->all();
         unset($data['_token']);
@@ -139,7 +143,8 @@ class LaporController extends Controller
         } else {
             DB::table('tb_pengaduan')->where('kode_pengaduan', $data['kode_pengaduan'])->update($data);
         }
-
+        Alert::success('Sukses', 'Laporan Berhasil di Edit');
         return redirect('/data_laporan')->withSuccessMessage('Data Berhasil Diubah');
+        return redirect()->back();
     }
 }

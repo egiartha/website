@@ -23,12 +23,12 @@
     <title>Detail Data Laporan | Aplikasi Pengaduan Masyarakat</title>
 
     <!-- Jumbotron -->
-    <div class="jumbotron jumbotron-fluid">
+    <!-- <div class="jumbotron jumbotron-fluid">
         <div class="container">
             <h1 class="display-4">Detail Pengaduan</h1>
             <a href="javascript::void(0)" class="btn btn-primary lapor">Detail data pengaduan Anda</a>
         </div>
-    </div>
+    </div> -->
     <!-- akhir Jumbotron -->
     <!-- ======= Mobile Menu ======= -->
     <div class="site-mobile-menu site-navbar-target">
@@ -84,16 +84,12 @@
                                                 <tr class="">
                                                     <td><b>Laporan<span style="margin-left: 45px">:</span></b> <span style="margin-left: 50px">{{$value->isi_laporan}}</span> </td>
                                                 </tr>
-                                                <tr>
-                                                <td><b>Laporan<span style="margin-left: 45px">
-                                                        <td style="vertical-align:top;">:</td>
-                                                        <td>{{$value->alamat}}, {{$value->desa}}, Kec. {{$value->kecamatan}}</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td><a target="_blank" href="http://maps.google.com/maps?q={{$value->latitude}},{{$value->longitude}}">Lihat di Google Maps</a></td>
-                                                    </tr>
+                                                <tr class="">
+                                                    <td><b>Laporan<span style="margin-left: 45px">:</span></b> <span style="margin-left: 50px">{{$value->alamat}}, {{$value->desa}}, Kec. {{$value->kecamatan}}</span> </td>
+                                                    <td><a target="_blank" href="http://maps.google.com/maps?q={{$value->latitude}},{{$value->longitude}}">Lihat di Google Maps</a></td>
+                                                </tr>
+
+                                                
 
                                                 <tr class="">
                                                     <td><b>Foto<span style="margin-left: 73px">:</span></b> <span style="margin-left: 50px">

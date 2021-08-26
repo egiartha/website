@@ -20,7 +20,7 @@
                 <div class="tab-content">
                     <div class="tab-pane active" id="data" role="tabpanel" aria-labelledby="data-tab">
                         <div class="card-body">     
-                            <table class="table table-striped">
+                        <table class="table table-striped">
                                 <tr>
                                     <th>Tanggal dibuat</th>
                                     <td>:</td>
@@ -41,7 +41,30 @@
                                     <td>:</td>
                                     <td>{{$value->kategori}} </td>
                                 </tr>
-                            </table>                                  
+                                <tr>
+                                    <th>Status</th>
+                                    <td>:</td>
+                                    <td>{{$value->status==="0"?'belum diproses':$value->status}} </td>
+                                </tr>
+                                <tr>
+                                    <th>Longitude</th>
+                                    <td>:</td>
+                                    <td>{{$value->longitude}} </td>
+                                </tr>
+                                <tr>
+                                    <th>Latitude</th>
+                                    <td>:</td>
+                                    <td>{{$value->latitude}} </td>
+                                </tr>
+
+                                <tr>
+                                    <th style="vertical-align: top;">Lokasi</th>
+                                    <td style="vertical-align: top;">:</td>
+                                    <td>
+                                        <div style="height: 400px; width: 100%;" id="mapId"></div>
+                                    </td>
+                                </tr>
+                            </table>                          
                         </div>
                     </div>
                     <div class="tab-pane" id="aspirasi" role="tabpanel" aria-labelledby="aspirasi-tab">
@@ -51,7 +74,11 @@
                                 <img src="{{url('/database/foto_pengaduan/'. $value->foto_pengaduan)}}" alt="" width="250">
                                 </div>
                                 <div class="col-lg-8">
-                                <p>{{$value->isi_laporan}}</p></div>
+                                <p>Laporan: {{$value->isi_laporan}}</p>
+                                    <p>Alamat Lokasi Laporan: {{$value->alamat}}</p>
+                                    <p>Desa: {{$value->desa}}</p>
+                                    <p>Kecamatan: {{$value->kecamatan}}</p>
+                            </div>
                             </div>
                         </div>
                     </div>
@@ -131,6 +158,40 @@
     $(document).ready(function() {
         $('#example').DataTable();
     } );
+</script>
+<script>
+    $(document).ready(function() {
+        const html = `<label for="foto_pengaduan"><b> Foto Perbaikan :</b></label> <input type="file" class="form-control" name="foto_selesai" id="foto_selesai" required />`
+
+        $('#example').DataTable()
+
+        $('#status').change(function() {
+            const val = $(this).val()
+            if (val === 'selesai') {
+                $('#foto_selesai_form').html(html)
+            } else {
+                $('#foto_selesai_form').html("<div/>")
+            }
+        })
+
+        const mark = ["{{$pengaduan[0]->latitude}}", "{{$pengaduan[0]->longitude}}"]
+
+        const map = L.map('mapId', {
+            center: mark,
+            zoom: 16
+        })
+
+        L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map)
+
+        L.popup({
+                closeButton: false
+            })
+            .setLatLng(mark)
+            .setContent('<p><b>{{$pengaduan[0]->alamat}}, {{$pengaduan[0]->desa}}, Kec. {{$pengaduan[0]->kecamatan}}</b></p><a target="_blank" href="http://maps.google.com/maps?q={{$pengaduan[0]->latitude}},{{$pengaduan[0]->longitude}}">Lihat di Google Maps</a>')
+            .openOn(map);
+    });
 </script>
 @endpush
 @endsection
