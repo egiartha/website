@@ -25,7 +25,15 @@ class PengajuanController extends Controller
             }
         });
 
-        $pengaduan = DB::table("tb_pengaduan")->where($new_where)->orderBy('kode_pengaduan', 'DESC')->get();
+        if ($request->input('bulan')) {
+            $array_bulan = explode('-', $request->input('bulan'));
+            $tahun = $array_bulan[0];
+            $bulan = $array_bulan[1];
+            $pengaduan = DB::table("tb_pengaduan")->whereYear('tgl_pengaduan', $tahun)->whereMonth('tgl_pengaduan', $bulan)->where($new_where)->orderBy('kode_pengaduan', 'DESC')->get();
+        } else {
+            $pengaduan = DB::table("tb_pengaduan")->where($new_where)->orderBy('kode_pengaduan', 'DESC')->get();
+        }
+
         return view('pengajuan.index', compact('pengaduan'));
     }
     public function lihat($id)

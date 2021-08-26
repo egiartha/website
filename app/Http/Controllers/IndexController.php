@@ -10,7 +10,7 @@ class IndexController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('masyarakat');
+        // $this->middleware('masyarakat');
     }
     public function index()
     {
@@ -21,5 +21,10 @@ class IndexController extends Controller
             })
             ->orderBy('tgl_pengaduan', 'desc')->get();
         return view('masyarakat.index', compact('aplikasi', 'pengaduan'));
+    }
+
+    public function login()
+    {
+        return view('auth.login_admin');
     }
 }

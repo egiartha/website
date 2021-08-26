@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return redirect('/login');
+    return redirect('/index');
 });
 
 
@@ -21,10 +21,11 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/index', 'IndexController@index');
+
 Route::group(['middleware' => 'auth'], function () {
 
     // Masyarakat
-    Route::get('/index', 'IndexController@index');
     Route::get('/tentang', 'TentangController@tentang');
     Route::get('/lokasi', 'TentangController@index');
     Route::get('/visi', 'TentangController@visi');
@@ -129,3 +130,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/login/admin', 'IndexController@login');

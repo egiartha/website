@@ -40,6 +40,9 @@
                                 </select>
                             </div>
                             <div class="col-md-3 ">
+                                <input name="bulan" value="<?= app('request')->input('bulan') ?>" type="month" class="form-control">
+                            </div>
+                            <div class="col-md-3 ">
                                 <button class="btn btn-info" type="submit">Submit</button>
                                 <a class="btn btn-warning" href="/pengajuan">Reset</a>
                             </div>
