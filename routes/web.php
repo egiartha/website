@@ -22,15 +22,14 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/index', 'IndexController@index');
+Route::get('/tentang', 'TentangController@tentang');
+Route::get('/lokasi', 'TentangController@index');
+Route::get('/visi', 'TentangController@visi');
 
 Route::group(['middleware' => 'auth'], function () {
 
     // Masyarakat
-    Route::get('/tentang', 'TentangController@tentang');
-    Route::get('/lokasi', 'TentangController@index');
-    Route::get('/visi', 'TentangController@visi');
     Route::get('/profile', 'ProfileController@profile');
-
     Route::get('/pengajuan', 'PengajuanController@index');
     Route::get('/pengajuan_lihat/{kode}', 'PengajuanController@lihat');
     Route::get('/pengajuan_edit/{kode}', 'PengajuanController@edit');
